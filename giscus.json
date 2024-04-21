@@ -1,3 +1,4 @@
 {
-  "origins": ["https://blog.fyz666.xyz"]
+  "origins": ["https://blog.fyz666.xyz", "http://localhost"],
+  "defaultCommentOrder": "newest"
 }
