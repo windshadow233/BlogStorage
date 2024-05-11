@@ -1,4 +1,4 @@
 {
-  "originsRegex": ["/^[a-zA-Z0-9-]+\.(?=fyz666\.xyz$)/"],
-  "defaultCommentOrder": "newest"
+  "defaultCommentOrder": "newest",
+  "originsRegex": [/^[a-zA-Z0-9-]+\.(?=fyz666\.xyz$)/]
 }
