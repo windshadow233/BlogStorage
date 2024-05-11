@@ -1,4 +1,4 @@
 {
   "defaultCommentOrder": "newest",
-  "originsRegex": ["^[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.fyz666\\.xyz$"]
+  "originsRegex": ["^https:\\/\\/[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.fyz666\\.xyz$"]
 }
