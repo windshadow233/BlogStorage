@@ -1,4 +1,4 @@
-# Blog Comments
+# Blog Storage
 
 我的个人博客 [https://blog.fyz666.xyz](https://blog.fyz666.xyz) 的数据存储仓库。
 
