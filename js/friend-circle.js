@@ -74,7 +74,7 @@ var end=start+fdata.stepnumber
 var articleNum=article_num;if(end>articleNum){end=articleNum}
 if(start<articleNum){UrlNow=localStorage.getItem("urlNow")
 var fetchUrl=UrlNow+"rule="+sortNow+"&start="+start+"&end="+end
-fetch(fetchUrl).then(res=>res.json()).then(json=>{var nextArticle=eval(json.article_data);console.log("已预载"+"?rule="+sortNow+"&start="+start+"&end="+end)
+fetch(fetchUrl).then(res=>res.json()).then(json=>{var nextArticle=eval(json.article_data);
 localStorage.setItem("nextArticle",JSON.stringify(nextArticle))})}else if(start=articleNum){document.getElementById('cf-more').outerHTML=`<div id="cf-more" class="cf-new-add" onclick="loadNoArticle()"><small>一切皆有尽头！</small></div>`}}
 function loadNextArticle(){var nextArticle=JSON.parse(localStorage.getItem("nextArticle"));var articleItem=""
 for(var i=0;i<nextArticle.length;i++){var item=nextArticle[i];articleItem+=`
@@ -105,7 +105,7 @@ localStorage.removeItem("sortNow")
 localStorage.removeItem("urlNow")
 pjax.loadUrl('');}
 function checkVersion(){var url=fdata.apiurl+"version"
-fetch(url).then(res=>res.json()).then(json=>{console.log(json)
+fetch(url).then(res=>res.json()).then(json=>{
 var nowStatus=json.status,nowVersion=json.current_version,newVersion=json.latest_version
 var versionID=document.getElementById('cf-version-up')
 if(nowStatus==0){versionID.innerHTML="当前版本：v"+nowVersion}else if(nowStatus==1){versionID.innerHTML="发现新版本：v"+nowVersion+" ↦ "+newVersion}else{versionID.innerHTML="网络错误，检测失败！"}})}
@@ -132,7 +132,6 @@ initFriendCircle(sortNow,changeUrl)
 if(fdata.apiurl){checkVersion()}}
 function openMeShow(event){event.preventDefault()
 var parse_url=/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;var meLink=event.currentTarget.dataset.link.replace(parse_url,'$1:$2$3')
-console.log(meLink)
 var fetchUrl=''
 if(fdata.apiurl){fetchUrl=fdata.apiurl+"post?num=5&link="+meLink}else{fetchUrl=fdata.apipublieurl+"post?num=5&link="+meLink}
 if(noClick=='ok'){noClick='no'
@@ -145,11 +144,10 @@ fetchShow(fetchUrl)}}
 function fetchShow(url){var closeHtml=`
     <div class="cf-overshow-close" onclick="closeShow()"></div>
   `
-document.getElementById('cf-overlay').className='cf-show-now';document.getElementById('cf-overshow').insertAdjacentHTML('afterbegin',closeHtml);console.log("开往"+url)
+document.getElementById('cf-overlay').className='cf-show-now';document.getElementById('cf-overshow').insertAdjacentHTML('afterbegin',closeHtml);
 fetch(url).then(res=>res.json()).then(json=>{noClick='ok'
 var statisticalData=json.statistical_data;var articleData=eval(json.article_data);loadFcircleShow(statisticalData,articleData)})}
 function initFriendCircle(sortNow,changeUrl){var articleSortData=sortNow+"ArticleData";var localStatisticalData=JSON.parse(localStorage.getItem("statisticalData"));var localArticleData=JSON.parse(localStorage.getItem(articleSortData));container.innerHTML="";if(localStatisticalData&&localArticleData){loadStatistical(localStatisticalData);loadArticleItem(localArticleData,0,fdata.initnumber)
-console.log("本地数据加载成功")
 var fetchUrl=UrlNow+"rule="+sortNow+"&start=0&end="+fdata.initnumber
 fetch(fetchUrl).then(res=>res.json()).then(json=>{var statisticalData=json.statistical_data;var articleData=eval(json.article_data);var localSnum=localStatisticalData.article_num
 var newSnum=statisticalData.article_num
@@ -161,6 +159,5 @@ document.getElementById('cf-footer').remove()
 container.innerHTML="";var articleSortData=sortNow+"ArticleData";loadStatistical(statisticalData);loadArticleItem(articleData,0,fdata.initnumber)
 localStorage.setItem("statisticalData",JSON.stringify(statisticalData))
 localStorage.setItem(articleSortData,JSON.stringify(articleData))
-console.log("热更新完成")}else{console.log("API数据未更新")}})}else{FetchFriendCircle(sortNow,changeUrl)
-console.log("第一次加载完成")}}
+}})}else{FetchFriendCircle(sortNow,changeUrl)}}
 initFriendCircle(sortNow)
