@@ -1,5 +1,5 @@
 if(typeof(fdataUser)!=="undefined"){for(var key in fdataUser){if(fdataUser[key]){fdata[key]=fdataUser[key];}}}
-var article_num='',sortNow='created',UrlNow='',friends_num=''
+var article_num='',sortNow='',UrlNow='',friends_num=''
 var container=document.getElementById('cf-container')||document.getElementById('fcircleContainer');var localSortNow=localStorage.getItem("sortNow")
 var localUrlNow=localStorage.getItem("urlNow")
 if(localSortNow&&localUrlNow){sortNow=localSortNow
