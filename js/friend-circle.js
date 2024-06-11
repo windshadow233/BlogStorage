@@ -60,7 +60,7 @@ function loadFcircleShow(userinfo,articledata){var showHtml=`
       <div class="cf-overshow">
         <div class="cf-overshow-head">
           <img class="cf-img-avatar avatar" src="${userinfo.avatar}" alt="avatar" onerror="this.src='${fdata.error_img}'; this.onerror = null;">
-          <a class="" target="_blank" rel="noopener nofollow" href="${userinfo.link}">${userinfo.author}</a>
+          <a class="" target="_blank" rel="noopener nofollow" href="${userinfo.link}">${userinfo.name}</a>
         </div>
         <div class="cf-overshow-content">
   `
@@ -103,7 +103,7 @@ localStorage.removeItem("nextArticle")
 localStorage.removeItem("statisticalData")
 localStorage.removeItem("sortNow")
 localStorage.removeItem("urlNow")
-location.reload();}
+pjax.loadUrl('');}
 function checkVersion(){var url=fdata.apiurl+"version"
 fetch(url).then(res=>res.json()).then(json=>{console.log(json)
 var nowStatus=json.status,nowVersion=json.current_version,newVersion=json.latest_version
