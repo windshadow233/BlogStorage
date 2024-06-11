@@ -1,4 +1,3 @@
-var fdata={jsonurl:'',apiurl:'',apipublieurl:'https://fcircle-pub.rct.cool/',initnumber:20,stepnumber:10,article_sort:'created',error_img:'https://sdn.geekzu.org/avatar/57d8260dfb55501c37dde588e7c3852c'}
 if(typeof(fdataUser)!=="undefined"){for(var key in fdataUser){if(fdataUser[key]){fdata[key]=fdataUser[key];}}}
 var article_num='',sortNow='',UrlNow='',friends_num=''
 var container=document.getElementById('cf-container')||document.getElementById('fcircleContainer');var localSortNow=localStorage.getItem("sortNow")
