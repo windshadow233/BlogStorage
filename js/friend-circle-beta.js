@@ -213,7 +213,7 @@ function closeShow(){
 var noClick='ok';
 function openToShow(){
   var fetchUrl='';
-  fetchUrl=fdata.apiurl+"post";
+  fetchUrl=fdata.apiurl+"post?num=5";
   if(noClick=='ok'){
     noClick='no';
     fetchShow(fetchUrl);
