@@ -46,7 +46,7 @@ function loadStatistical(sdata){
       <div id="cf-more" class="cf-new-add" onclick="loadNextArticle()"><i class="fas fa-angle-double-down"></i></div>
       <div id="cf-footer" class="cf-new-add">
        <span class="cf-data-lastupdated">更新于：${sdata.last_updated_time}</span>
-        Powered by <a target="_blank" href="https://github.com/windshadow233/friends-circle" target="_blank">FriendCircle</a>
+        Powered by <a target="_blank" href="https://github.com/windshadow233/friends-circle" target="_blank">Friends-Circle</a>
       </div>
       <div id="cf-overlay" class="cf-new-add" onclick="closeShow()"></div>
       <div id="cf-overshow" class="cf-new-add"></div>
