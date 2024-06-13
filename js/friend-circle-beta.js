@@ -4,7 +4,7 @@ var container=document.getElementById('cf-container')||document.getElementById('
 var localUrlNow=localStorage.getItem("urlNow")
 if(localSortNow&&localUrlNow){sortNow=localSortNow
 UrlNow=localUrlNow}else{sortNow=fdata.article_sort
-if(fdata.jsonurl){UrlNow=fdata.apipublieurl+'postjson?jsonlink='+fdata.jsonurl+"&"}else if(fdata.apiurl){UrlNow=fdata.apiurl+'all?'}else{UrlNow=fdata.apipublieurl+'all?'}
+UrlNow=fdata.apiurl+'all?'
 localStorage.setItem("urlNow",UrlNow)
 localStorage.setItem("sortNow",sortNow)}
 function loadStatistical(sdata){article_num=sdata.article_num
@@ -115,8 +115,7 @@ localStorage.removeItem("nextArticle")
 localStorage.removeItem("statisticalData")
 container.innerHTML=""
 UrlNow=localStorage.getItem("urlNow")
-var UrlNowPublic=fdata.apipublieurl+'all?'
-if(UrlNow!==UrlNowPublic){changeUrl=fdata.apipublieurl+'all?'}else{if(fdata.jsonurl){changeUrl=fdata.apipublieurl+'postjson?jsonlink='+fdata.jsonurl+"&"}else if(fdata.apiurl){changeUrl=fdata.apiurl+'all?'}}
+changeUrl=fdata.apiurl+'all?'
 localStorage.setItem("urlNow",changeUrl)
 FetchFriendCircle(sortNow,changeUrl)}else{clearLocal()}}
 function FetchFriendCircle(sortNow,changeUrl){var end=fdata.initnumber
@@ -133,12 +132,12 @@ if(fdata.apiurl){checkVersion()}}
 function openMeShow(event){event.preventDefault()
 var parse_url=/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;var meLink=event.currentTarget.dataset.link.replace(parse_url,'$1:$2$3')
 var fetchUrl=''
-if(fdata.apiurl){fetchUrl=fdata.apiurl+"post?num=5&link="+meLink}else{fetchUrl=fdata.apipublieurl+"post?num=5&link="+meLink}
+fetchUrl=fdata.apiurl+"post?num=5&link="+meLink
 if(noClick=='ok'){noClick='no'
 fetchShow(fetchUrl)}}
 function closeShow(){document.getElementById('cf-overlay').className-='cf-show-now';document.getElementById('cf-overshow').className-='cf-show-now';document.getElementById('cf-overshow').innerHTML=''}
 var noClick='ok';function openToShow(){var fetchUrl=''
-if(fdata.apiurl){fetchUrl=fdata.apiurl+"post"}else{fetchUrl=fdata.apipublieurl+"post"}
+fetchUrl=fdata.apiurl+"post"
 if(noClick=='ok'){noClick='no'
 fetchShow(fetchUrl)}}
 function fetchShow(url){var closeHtml=`
