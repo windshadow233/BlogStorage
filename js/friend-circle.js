@@ -199,7 +199,7 @@ function openMeShow(event){
   event.preventDefault();
   var target = event.target;
   var user = target.innerText;
-  var fetchUrl=fdata.apiurl+"post?num=5&user="+user.replace(/\s+/g, '');
+  var fetchUrl=fdata.apiurl+"post?num=5&user="+user;
   if(noClick=='ok'){
     noClick='no';
     fetchShow(fetchUrl);
