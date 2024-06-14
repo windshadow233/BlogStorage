@@ -11,7 +11,6 @@ var randomPostTips = ["钓到了绝世好文！", "在河边打了个喷嚏，�
 var randomPostClick = 0;
 
 function fetchRandomPost() {
-    console.log(fdata.apiurl)
     if (randomPostWorking == false) {
         randomPostWorking = true;
         let randomRotate = randomPostTimes * 360;
