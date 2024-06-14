@@ -199,7 +199,7 @@ function openMeShow(event){
   event.preventDefault();
   var target = event.target;
   var user = target.innerText;
-  var fetchUrl=fdata.apiurl+"post?num=5&user="+user;
+  var fetchUrl=fdata.apiurl+`post?num=${fdata.popup_article_num}&user=${user}`;
   if(noClick=='ok'){
     noClick='no';
     fetchShow(fetchUrl);
@@ -213,7 +213,7 @@ function closeShow(){
 var noClick='ok';
 function openToShow(){
   var fetchUrl='';
-  fetchUrl=fdata.apiurl+"post?num=5";
+  fetchUrl=fdata.apiurl+`post?num=${fdata.popup_article_num}`;
   if(noClick=='ok'){
     noClick='no';
     fetchShow(fetchUrl);
