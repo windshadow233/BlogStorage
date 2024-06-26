@@ -40,6 +40,7 @@ var github_canlendar = (git_user, git_color) => {
         }
     };
     function responsiveChart() {
+        if (!document.getElementById('github_container'))return;
         var ratio = window.devicePixelRatio || 1
         var git_tooltip_container = document.getElementById('git_tooltip_container');
         var git_x = '';
