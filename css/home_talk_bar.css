@@ -1,0 +1,58 @@
+#bbTimeList {
+    background: var(--fyz-white);
+    color: var(--fyz-fontcolor);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    box-shadow: var(--fyz-shadow-lightblack);
+    display: flex;
+    transition: all 0.3s ease 0s;
+    margin: 1rem auto 1rem;
+    border: var(--style-border);
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    max-width: 1500px;
+    padding: 0px 15px;
+  }
+  [data-theme="dark"] #bbTimeList {
+    background: #000 !important;
+  }
+  #bbtalk {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #bber-talk {
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bber-gotobb {
+    line-height: 25px;
+    margin-left: 1rem;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+  }
+  
+  #bber-talk .li-style {
+    width: 100%;
+    max-width: 100%;
+    height: 25px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.3s;
+    font-weight: 700;
+    margin: auto;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  #bbTimeList:hover {
+    border: var(--style-border-hover);
+    box-shadow: var(--fyz-shadow-main);
+  }
