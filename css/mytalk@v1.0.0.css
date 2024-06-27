@@ -133,10 +133,6 @@
     display: flex;
     align-items: center;
   }
-  
-  #bber .bber-info .far.fa-clock {
-    margin-right: 4px;
-  }
   #bber > section > ul > li > div .bber-info-from span,
   #bber > section > ul > li > div .bber-info-from {
     margin-left: 4px;
@@ -168,7 +164,7 @@
     padding: 0px 8px;
     border-radius: 20px;
   }
-  #bber .bber-content-link i {
+  #bber .bber-bottom .bber-info i {
     margin-right: 3px;
   }
   #bber .bber-content-link:hover {
