@@ -2,17 +2,23 @@
     background: var(--fyz-white);
     color: var(--fyz-fontcolor);
     padding: 0.5rem 1rem;
-    border-radius: 30px;
-    box-shadow: var(--fyz-shadow-lightblack);
+    border-radius: 15px;
     display: flex;
     transition: all 0.3s ease 0s;
     margin: 1rem auto 1rem;
-    border: var(--style-border);
+    border: 1px solid var(--fyz-border);
     align-items: center;
     height: 50px;
     width: 100%;
     max-width: 1500px;
     padding: 0px 15px;
+    -webkit-box-shadow: var(--card-box-shadow);
+    box-shadow: var(--card-box-shadow);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
   }
   [data-theme="dark"] #bbTimeList {
     background: #000 !important;
@@ -54,5 +60,5 @@
   
   #bbTimeList:hover {
     border: var(--style-border-hover);
-    box-shadow: var(--fyz-shadow-main);
+    box-shadow:0 0 3px var(--fyz-theme)!important;
   }
