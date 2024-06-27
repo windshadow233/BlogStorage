@@ -90,7 +90,31 @@ var talk = {
       n.setSelectionRange(-1, -1),
       document.getElementById("comment-tips") && document.getElementById("comment-tips").classList.add("show");
   },
-};
+  initIndexTalk: function () {
+    setTimeout(() => {
+      let talk_bar_swiper = new Swiper(".talk_bar_swiper_container", {
+        passiveListeners: true,
+        direction: "vertical",
+        loop: true,
+        autoplay: {
+          disableOnInteraction: true,
+          delay: 3000,
+        },
+        mousewheel: true,
+      });
 
+      let talk_bar_comtainer = document.getElementById("bbtalk");
+      if (talk_bar_comtainer !== null) {
+        talk_bar_comtainer.onmouseenter = function () {
+          talk_bar_swiper.autoplay.stop();
+        };
+        talk_bar_comtainer.onmouseleave = function () {
+          talk_bar_swiper.autoplay.start();
+        };
+      }
+    }, 100);
+  }
+};
+talk.initIndexTalk();
 talk.changeTimeInTalk();
 talk.reflashTalkWaterFall();
