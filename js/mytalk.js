@@ -115,6 +115,3 @@ var talk = {
     }, 100);
   }
 };
-talk.initIndexTalk();
-talk.changeTimeInTalk();
-talk.reflashTalkWaterFall();
