@@ -62,3 +62,6 @@
     border: var(--style-border-hover);
     box-shadow:0 0 3px var(--fyz-theme)!important;
   }
+  #bbTimeList .li-style.swiper-slide:hover{
+    color: var(--fyz-theme);
+  }
