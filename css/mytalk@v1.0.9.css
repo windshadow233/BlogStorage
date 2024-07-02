@@ -13,7 +13,7 @@
   #bber .bber-container-img {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: left;
     width: 100%;
     flex-wrap: wrap;
     margin-bottom: 0.3rem;
@@ -25,9 +25,6 @@
     width: 100%;
     flex-wrap: wrap;
     margin-bottom: 0.3rem;
-  }
-  #bber .bber-container-img .bber-content-noimg {
-    width: calc(100% / 4 - 5px);
   }
   
   #bber .bber-content-img img {
@@ -42,8 +39,9 @@
     overflow: hidden;
     display: flex;
     position: relative;
-    width: calc(100% / 4 - 5px);
+    width: fit-content;
     margin-bottom: 10px;
+    margin-right: 5px;
   }
   
   #bber .bber-content .datacont {
