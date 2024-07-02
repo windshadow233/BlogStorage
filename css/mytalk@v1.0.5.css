@@ -18,7 +18,14 @@
     flex-wrap: wrap;
     margin-bottom: 0.3rem;
   }
-  
+  #bber .bber-container-video{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+  }
   #bber .bber-content-img img {
     object-fit: cover;
     max-height: 100%;
