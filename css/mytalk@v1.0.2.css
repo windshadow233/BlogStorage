@@ -32,7 +32,7 @@
     overflow: hidden;
     display: flex;
     position: relative;
-    width: calc(100% / 4 - 5px);
+    width: fit-content;
     margin-bottom: 10px;
   }
   
