@@ -13,12 +13,12 @@
   #bber .bber-container-img {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-around;
     width: 100%;
     flex-wrap: wrap;
     margin-bottom: 0.3rem;
   }
-  #bber .bber-container-video{
+  #bber .bber-container-video {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -26,11 +26,11 @@
     flex-wrap: wrap;
     margin-bottom: 0.3rem;
   }
+  
   #bber .bber-content-img img {
     object-fit: cover;
     max-height: 100%;
     border-radius: 12px;
-    margin-right: 5px;
   }
   
   #bber .bber-content-img {
@@ -39,7 +39,7 @@
     overflow: hidden;
     display: flex;
     position: relative;
-    width: fit-content;
+    width: calc(100% / 4 - 5px);
     margin-bottom: 10px;
   }
   
@@ -75,7 +75,7 @@
     transition: all 0.3s ease 0s;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     background: var(--fyz-card-bg);
     -webkit-box-shadow: var(--card-box-shadow);
