@@ -126,6 +126,7 @@
   #bber .bber-info {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   
   #bber > section > ul > li > div .bber-info-time,
@@ -138,6 +139,8 @@
     cursor: default;
     display: flex;
     align-items: center;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
   }
   #bber > section > ul > li > div .bber-info-from span,
   #bber > section > ul > li > div .bber-info-from {
@@ -162,7 +165,7 @@
   
   #bber .bber-content-link {
     display: flex;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     font-size: 0.7rem;
     align-items: center;
     background-color: rgba(245, 108, 108, 0.13);
