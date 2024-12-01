@@ -142,10 +142,6 @@
     margin-right: 0.5em;
     margin-bottom: 0.5em;
   }
-  #bber > section > ul > li > div .bber-info-from span,
-  #bber > section > ul > li > div .bber-info-from {
-    margin-left: 4px;
-  }
   
   #bber .bber-bottom {
     display: flex;
@@ -165,7 +161,7 @@
   
   #bber .bber-content-link {
     display: flex;
-    margin-right: 0.5rem;
+    margin-right: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.7rem;
     align-items: center;
