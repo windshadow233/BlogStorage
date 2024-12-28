@@ -7,7 +7,7 @@ var t, e;
         document.removeEventListener("DOMContentLoaded", i),
         o.forEach((t => t.call(document))),
         o = []
-    },
+    }
     e = {
         counterIds: ["site_pv", "page_pv", "site_uv"],
         updateText: function(t) {
