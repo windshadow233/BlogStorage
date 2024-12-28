@@ -47,6 +47,7 @@ var github_canlendar = (git_user, git_color) => {
         var git_span1 = '';
         var git_span2 = '';
         var c = document.getElementById("gitcanvas");
+        if (c === null) return;
         c.style.width ='100%';
         c.style.height ='';
         var cmessage = document.getElementById("gitmessage");
