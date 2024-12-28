@@ -1,6 +1,5 @@
 window.commentBarrageTimer = null;
 function isInViewPortOfOne (el) {
-    if (el === null) return;
     const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight 
     const offsetTop = el.offsetTop
     const scrollTop = document.documentElement.scrollTop
