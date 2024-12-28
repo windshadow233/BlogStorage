@@ -42,7 +42,7 @@ var t, e;
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        url: window.location.href.replace(window.location.hostname, a);
+                        url: window.location.href.replace(window.location.hostname, a)
                     })
                 })
                   , c = await o.json();
