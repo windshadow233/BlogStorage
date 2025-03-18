@@ -170,6 +170,17 @@
     padding: 0px 8px;
     border-radius: 20px;
   }
+  #bber .bber-tag {
+    display: flex;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.7rem;
+    align-items: center;
+    background-color: rgba(78, 181, 213, 0.13);
+    color: rgb(78, 181, 213);
+    padding: 0px 8px;
+    border-radius: 20px;
+  }
   #bber .bber-bottom .bber-info i {
     margin-right: 3px;
   }
