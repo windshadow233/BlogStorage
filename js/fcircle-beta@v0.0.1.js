@@ -33,7 +33,7 @@ function loadStatistical(sdata){
           <span class="cf-message">${sdata.active_num}</span>
         </div>
         <div class="cf-data-article" onclick="clearLocal()">
-          <span class="cf-label">日志</span>
+          <span class="cf-label">文章总数</span>
           <span class="cf-message">${sdata.article_num}</span>
         </div>
       </div>
