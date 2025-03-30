@@ -252,7 +252,7 @@
   }
   
   /* 顶部样式 */
-  .author-content.author-content-item.talkPage {
+  .author-content.author-content-item.top-background {
     height: 19rem;
     color: var(--fyz-white);
     overflow: hidden;
