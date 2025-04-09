@@ -203,7 +203,7 @@ rmf.switchReadMode = function() {
 ,
 rmf.copyText = async function(t) {
   try {
-        await navigator.clipboard.writeText(document.getSelection()),
+        await navigator.clipboard.writeText(t),
         Snackbar.show({
             text: "复制成功！",
             pos: "top-right",
