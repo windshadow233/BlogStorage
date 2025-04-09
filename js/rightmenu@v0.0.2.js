@@ -217,6 +217,7 @@ rmf.copyText = async function(t) {
         })
     }
 }
+,
 rmf.copySelect = async function() {
     try {
         await navigator.clipboard.writeText(document.getSelection()),
