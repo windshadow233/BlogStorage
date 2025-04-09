@@ -201,11 +201,11 @@ rmf.switchReadMode = function() {
     $("#readmode").click()
 }
 ,
-rmf.copyText = async function(t) {
+rmf.copyText = async function(t, successText) {
   try {
         await navigator.clipboard.writeText(t),
         Snackbar.show({
-            text: "复制成功！",
+            text: successText,
             pos: "top-right",
             showAction: !1
         })
@@ -219,20 +219,7 @@ rmf.copyText = async function(t) {
 }
 ,
 rmf.copySelect = async function() {
-    try {
-        await navigator.clipboard.writeText(document.getSelection()),
-        Snackbar.show({
-            text: "复制成功！记得加上出处哦～",
-            pos: "top-right",
-            showAction: !1
-        })
-    } catch (e) {
-        Snackbar.show({
-            text: "复制失败了QAQ，再试一试吧！",
-            pos: "top-right",
-            showAction: !1
-        })
-    }
+    await rmf.copyText(document.getSelection(), '复制成功！记得加上出处哦～')
 }
 ,
 rmf.scrollToTop = function() {
