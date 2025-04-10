@@ -25,9 +25,6 @@ function talkScroll() {
 
   (p.offsetTop + p.offsetHeight / 2 < r || 90 < result) && (percentFlag = true);
 }
-function replaceAll(e, n, t) {
-  return e.split(n).join(t);
-}
 var talk = {
   diffDate: function (d, more = false) {
     const dateNow = new Date();
