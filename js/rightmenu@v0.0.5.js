@@ -200,9 +200,9 @@ rmf.copyPageLink = async function() {
 rmf.switchReadMode = function() {
     $("#readmode").click()
 },
-rmf.commentText = function (e) {
+rmf.commentText = function (e, m = 50) {
     if (e == "undefined" || e == "null") e = "好棒！";
-    e = e.length > 50 ? e.substring(0, 50) + '...' : e
+    e = e.length > m ? e.substring(0, m) + '...' : e
     var n = document.getElementsByClassName("el-textarea__inner")[0],
       t = document.createEvent("HTMLEvents");
     if (!n) return;
