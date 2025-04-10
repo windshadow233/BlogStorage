@@ -52,6 +52,9 @@ function downloadImageAsBlob(n) {
     }
     ).catch(e => console.error(e))
 }
+function replaceAll(e, n, t) {
+  return e.split(n).join(t);
+}
 let rmf = {};
 function showLinkMenu(e) {
     $(".menu-to").show(),
