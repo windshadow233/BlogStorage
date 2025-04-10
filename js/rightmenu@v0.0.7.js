@@ -115,7 +115,7 @@ function popupMenu() {
         if (e.ctrlKey)
             return !0;
         $("#rightMenu .hide").hide(),
-        document.getSelection().toString() && $(".menu-text").show(),
+        window.getSelection().toString() && $(".menu-text").show(),
         document.getElementById("post-comment") && $(".menu-comment").show(),
         document.getElementById("readmode") && $(".menu-read").show(),
         el = e.target;
@@ -218,6 +218,9 @@ rmf.commentText = function (e, m = 50) {
       n.setSelectionRange(-1, -1),
       document.getElementById("comment-tips") && document.getElementById("comment-tips").classList.add("show");
 }
+rmf.commentSelect = function () {
+    rmf.commentText(window.getSelection().toString());
+}
 ,
 rmf.copyText = async function(t, successText) {
   try {
@@ -237,7 +240,7 @@ rmf.copyText = async function(t, successText) {
 }
 ,
 rmf.copySelect = async function() {
-    await rmf.copyText(document.getSelection(), '复制成功！记得加上出处哦～')
+    await rmf.copyText(window.getSelection(), '复制成功！记得加上出处哦～')
 }
 ,
 rmf.scrollToTop = function() {
