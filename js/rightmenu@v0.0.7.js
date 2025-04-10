@@ -114,9 +114,11 @@ function popupMenu() {
     window.oncontextmenu = function(e) {
         if (e.ctrlKey)
             return !0;
+        let selection = window.getSelection().toString();
         $("#rightMenu .hide").hide(),
-        window.getSelection().toString() && $(".menu-text").show(),
+        selection && $(".menu-text").show(),
         document.getElementById("post-comment") && $(".menu-comment").show(),
+        !selection && $('.comment-select').hide(),
         document.getElementById("readmode") && $(".menu-read").show(),
         el = e.target;
         /^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+$/.test(window.getSelection().toString()) && "A" != el.tagName && $(".menu-too").show(),
