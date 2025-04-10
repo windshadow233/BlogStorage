@@ -115,10 +115,11 @@ function popupMenu() {
         if (e.ctrlKey)
             return !0;
         let selection = window.getSelection().toString();
+        let comment = document.getElementById("post-comment");
         $("#rightMenu .hide").hide(),
         selection && $(".menu-text").show(),
-        document.getElementById("post-comment") && $(".menu-comment").show(),
-        !selection && $('.comment-select').hide(),
+        comment && $(".menu-comment").show(),
+        selection && comment && $('.comment-select').show(),
         document.getElementById("readmode") && $(".menu-read").show(),
         el = e.target;
         /^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+$/.test(window.getSelection().toString()) && "A" != el.tagName && $(".menu-too").show(),
