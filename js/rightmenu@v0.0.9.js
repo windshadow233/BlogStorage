@@ -16,13 +16,6 @@ function setMask() {
 function removeMask() {
     null != document.getElementsByClassName("rmMask")[0] && document.body.removeChild(mask)
 }
-function isFullScreen() {
-    return !!(document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen || document.webkitFullScreen || document.msFullScreen)
-}
-function fullScreen() {
-    const e = document.body;
-    isFullScreen() ? document.exitFullScreen ? document.exitFullScreen() : document.mozCancelFullScreen ? document.mozCancelFullScreen() : document.webkitExitFullscreen ? document.webkitExitFullscreen() : element.msExitFullscreen && element.msExitFullscreen() : e.requestFullscreen ? e.requestFullscreen() : e.mozRequestFullScreen ? e.mozRequestFullScreen() : e.webkitRequestFullscreen ? e.webkitRequestFullscreen() : e.msRequestFullscreen && e.msRequestFullscreen()
-}
 function insertAtCursor(e, t) {
     var n, o, s;
     document.selection ? (e.focus(),
