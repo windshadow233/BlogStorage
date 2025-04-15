@@ -67,7 +67,7 @@
     line-height: 30px;
 }
 #rightMenu:hover{
-    border: 1px solid var(--fyz-blue);
+    border: 1px solid var(--fyz-theme);
     /* box-shadow:0 0 3px var(--fyz-blue)!important; */
 }
 #rightMenu .rightMenu-group.rightMenu-line .rightMenu-item *{
@@ -79,7 +79,7 @@
 }
 .rightMenu-item:hover{
     color:white!important;
-    background-color:var(--fyz-blue)!important;
+    background-color:var(--fyz-theme)!important;
 }
 :root{
     --fyz-border:#c9c9c9;
