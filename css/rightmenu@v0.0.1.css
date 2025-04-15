@@ -54,7 +54,6 @@
 }
 #rightMenu .rightMenu-group .rightMenu-item:hover{
     background-color: var(--text-bg-hover);
-    box-shadow: 0px 0px 5px var(--fyz-border);
 }
 #rightMenu .rightMenu-group .rightMenu-item i{
     display: inline-block;
