@@ -43,7 +43,14 @@ function downloadImageAsBlob(n) {
         window.URL.revokeObjectURL(t),
         e.remove()
     }
-    ).catch(e => console.error(e))
+    ).catch(e => {
+        console.error(e);
+        Snackbar.show({
+                text: "保存失败QAQ...你可以尝试「新窗口打开图片」",
+                pos: "top-right",
+                showAction: !1
+            });
+    })
 }
 function replaceAll(e, n, t) {
   return e.split(n).join(t);
