@@ -10,6 +10,14 @@
   #web_bg ~ .page:has(#talk_page) {
     background: var(--fyz-background);
   }
+  #bber .bber-container-img {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+  }
   #bber .bber-container-video {
     display: flex;
     align-items: center;
@@ -29,13 +37,9 @@
   }
   
   #bber .bber-content-img {
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: left;
     width: calc((100% - 15px * 2) / 3);
     aspect-ratio: 1 / 1;
     margin: 5px;
-    margin-bottom: 0.3rem;
     border-radius: 5px;
     overflow: hidden;
     display: flex;
