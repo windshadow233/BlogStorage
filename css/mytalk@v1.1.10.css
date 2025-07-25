@@ -14,14 +14,9 @@
     display: flex;
     align-items: center;
     justify-content: left;
+    width: 100%;
     flex-wrap: wrap;
     margin-bottom: 0.3rem;
-    width: calc((100% - 15px * 2) / 3);
-    aspect-ratio: 1 / 1;
-    margin: 5px;
-    overflow: hidden;
-    border-radius: 5px;
-    position: relative;
   }
 /*     #bber .bber-content-img {
       width: calc((100% - 15px * 2) / 3);
