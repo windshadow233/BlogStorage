@@ -65,6 +65,24 @@
     left: 8px;
     top: -8px;
 }
+#bber .bber-content .hide-button{
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid var(--fyz-theme);
+    background-color: var(--fyz-white);
+    color: var(--fyz-black);
+    transition: .2s ease-in-out;
+}
+#bber .bber-content .hide-button:hover{
+    background-color: var(--fyz-theme);
+    color: var(--fyz-white);
+}
+#bber .bber-content .hide-content{
+    font-size: 13px;
+    color: white;
+}
   #bber p {
     margin: 0px;
   }
