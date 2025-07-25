@@ -10,14 +10,27 @@
   #web_bg ~ .page:has(#talk_page) {
     background: var(--fyz-background);
   }
-  #bber .bber-container-img {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    width: 100%;
-    flex-wrap: wrap;
-    margin-bottom: 0.3rem;
-  }
+    #bber .bber-content-img {
+      width: calc((100% - 15px * 2) / 3);
+      aspect-ratio: 1 / 1;
+      margin: 5px;
+      overflow: hidden;
+      border-radius: 5px;
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: left;
+      flex-wrap: wrap;
+      margin-bottom: 0.3rem;
+    }
+    #bber .bber-content-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 5px;
+    }
   #bber .bber-container-video {
     display: flex;
     align-items: center;
