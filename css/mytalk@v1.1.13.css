@@ -28,9 +28,12 @@
   }
   
   #bber .bber-content-img img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    max-height: 100%;
+    object-position: center;
     border-radius: 5px;
+    display: block;
   }
   
   #bber .bber-content-img {
