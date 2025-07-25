@@ -10,7 +10,15 @@
   #web_bg ~ .page:has(#talk_page) {
     background: var(--fyz-background);
   }
-    #bber .bber-content-img {
+  #bber .bber-container-img {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+  }
+/*     #bber .bber-content-img {
       width: calc((100% - 15px * 2) / 3);
       aspect-ratio: 1 / 1;
       margin: 5px;
@@ -30,7 +38,7 @@
       object-position: center;
       display: block;
       border-radius: 5px;
-    }
+    } */
   #bber .bber-container-video {
     display: flex;
     align-items: center;
