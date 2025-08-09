@@ -313,3 +313,37 @@
   #bber .aplayer .aplayer-lrc p {
     color: var(--fyz-fontcolor);
   }
+#talk-more {
+  background: var(--fyz-card-bg);
+  color: var(--cf-fontcolor);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 40%;
+  max-width: 810px;
+  height: 30px;
+  margin: auto;
+  border-radius: 12px;
+  font-weight: bolder;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: .3s;
+  border: 1px solid var(--fyz-border) !important;
+}
+
+#talk-more:hover {
+  width: 60%;
+  border: 1px solid var(--fyz-theme) !important;
+  box-shadow: 0 0 3px var(--fyz-theme) !important;
+}
+.talk-hidden {
+  display: none;
+}
+#talk-more i.fas::before {
+  content: "∞";
+}
+#talk-more i.fas:hover, #talk-more span:hover {
+  color: var(--fyz-theme);
+}
