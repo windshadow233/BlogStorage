@@ -33,8 +33,11 @@ function waterfall(a) {
       f(a) != t && (b.target.removeEventListener(b.type, arguments.callee), waterfall(a));
     }
     "string" == typeof a && (a = document.querySelector(a));
-    var l = [].map.call(a.children, function (a) {
-      return (a.style.position = "absolute"), a;
+    var l = [].filter.call(a.children, function (el) {
+      return window.getComputedStyle(el).display !== 'none';
+    }).map(function (el) {
+      el.style.position = 'absolute';
+      return el;
     });
     a.style.position = "relative";
     var m = [];
