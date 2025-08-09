@@ -280,16 +280,10 @@
   }
   
   /* 顶部样式 */
-  .author-content.author-content-item.top-background {
-    height: 19rem;
-    color: var(--fyz-white);
-    overflow: hidden;
-    margin-top: 0px;
-  }
-  #page:has(#talk_page) .author-content-item .card-content .banner-button-group .banner-button:hover {
+/*   #page:has(#talk_page) .author-content-item .card-content .banner-button-group .banner-button:hover {
     color: var(--fyz-white);
     border-radius: 20px !important;
-  }
+  } */
   
   /* 响应式 */
   @media screen and (max-width: 1300px) {
