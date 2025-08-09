@@ -12,11 +12,11 @@ function talkScroll() {
     // console.info(waterfallResult, document.documentElement.clientHeight);
     setTimeout(() => {
       waterfall("#waterfall");
-    }, 100);
+    }, 200);
   } else {
     setTimeout(() => {
       document.querySelector("#waterfall") && waterfall("#waterfall");
-    }, 100);
+    }, 200);
   }
 
   const r = window.scrollY + document.documentElement.clientHeight;
@@ -71,7 +71,7 @@ var talk = {
       setTimeout(function () {
         waterfall("#waterfall");
         document.getElementById("waterfall").classList.add("show");
-      }, 100);
+      }, 200);
   },
   initIndexTalk: function () {
     setTimeout(() => {
