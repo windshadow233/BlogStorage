@@ -183,6 +183,9 @@
     text-align: right;
     font-size: 13px;
 }
+#cf-footer a:hover {
+    color: var(--cf-hover);
+}
 .cf-data-lastupdated {
     font-size: 13px;
     text-align: right;
