@@ -102,7 +102,7 @@
     }
     function responseHandler(badgeHtml, badgeUid) {
       responsesReceived ++;
-      selectors = [
+      var selectors = [
         ".profile-badge__content-profile-company-school-info a.profile-badge__content-profile-company-school-info-link",
         ".profile-badge__content-profile-name a.profile-badge__content-profile-name-link"
       ];
