@@ -100,6 +100,17 @@
         });
         return div.innerHTML;
     }
+    function modify_style(html, style_dict) {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        for (const [selector, styles] of Object.entries(style_dict)) {
+            const elements = div.querySelectorAll(selector);
+            elements.forEach(element => {
+                Object.assign(element.style, styles);
+            });
+        }
+        return div.innerHTML;
+    }
     function responseHandler(badgeHtml, badgeUid) {
       responsesReceived ++;
       var selectors = [
@@ -110,10 +121,14 @@
         badgeHtml,
         selectors
       );
-      
+        // Modify styles
+      var style_dict = {
+        '.profile-badge': {'margin-left': '0', 'width': '100%', 'height': '100%', 'border-radius': '24px'},
+        '.profile-badge__content': {'padding': '5px 20px 20px'}
+      }
+      badgeHtml = modify_style(badgeHtml, style_dict);
+
       var i, badge, uid, isCreate;
-      var defaultWidth = 330 // max possible width
-      var defaultHeight = 300 // max possible height
 
       for (i = 0, len = badges.length; i < len; i++) {
         badge = badges[i];
@@ -123,12 +138,6 @@
         if (uid === badgeUid) {
           var badgeMarkup = `<body>${badgeHtml}</body>`
           var iframe = document.createElement('iframe');
-          iframe.onload = function() {
-            var iframeBody = iframe.contentWindow.document.body;
-            // 5 px buffer to avoid the badge border being cut off.
-            iframe.setAttribute('height', (iframeBody.scrollHeight || defaultHeight) + 5);
-            iframe.setAttribute('width', (iframeBody.scrollWidth || defaultWidth) + 5);
-          };
           iframe.setAttribute('frameBorder', '0');
           iframe.style.display = 'block';
           badge.appendChild(iframe);
