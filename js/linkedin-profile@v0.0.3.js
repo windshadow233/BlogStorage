@@ -85,9 +85,31 @@
     * @param badgeHtml: String representing contents of the badge
     * @param badgeUid: UID of the badge to target
     **/
+    function stripLinks(html, selector) {
+        selector = selector.join(",");
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        const links = div.querySelectorAll(selector);
+        links.forEach(link => {
+            const text = link.textContent.trim();
+            const newDiv = document.createElement('div');
+            newDiv.className = link.className;
+            newDiv.textContent = text;
+            link.replaceWith(newDiv);
+        });
+        return div.innerHTML;
+    }
     function responseHandler(badgeHtml, badgeUid) {
       responsesReceived ++;
-
+      selectors = [
+        ".profile-badge__content-profile-company-school-info a.profile-badge__content-profile-company-school-info-link",
+        ".profile-badge__content-profile-name a.profile-badge__content-profile-name-link"
+      ];
+      badgeHtml = stripLinks(
+        badgeHtml,
+        selectors
+      );
+      
       var i, badge, uid, isCreate;
       var defaultWidth = 330 // max possible width
       var defaultHeight = 300 // max possible height
@@ -189,4 +211,3 @@
   }
 
 })(window);
-
