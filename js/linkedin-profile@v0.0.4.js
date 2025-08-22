@@ -85,17 +85,18 @@
     * @param badgeHtml: String representing contents of the badge
     * @param badgeUid: UID of the badge to target
     **/
-    function stripLinks(html, selector) {
+    function fixLinks(html, selector) {
         selector = selector.join(",");
         const div = document.createElement('div');
         div.innerHTML = html;
         const links = div.querySelectorAll(selector);
         links.forEach(link => {
-            const text = link.textContent.trim();
-            const newDiv = document.createElement('div');
-            newDiv.className = link.className;
-            newDiv.textContent = text;
-            link.replaceWith(newDiv);
+            // const text = link.textContent.trim();
+            // const newDiv = document.createElement('div');
+            // newDiv.className = link.className;
+            // newDiv.textContent = text;
+            // link.replaceWith(newDiv);
+            link.target = '_blank'
         });
         return div.innerHTML;
     }
@@ -105,7 +106,7 @@
         ".profile-badge__content-profile-company-school-info a.profile-badge__content-profile-company-school-info-link",
         ".profile-badge__content-profile-name a.profile-badge__content-profile-name-link"
       ];
-      badgeHtml = stripLinks(
+      badgeHtml = fixLinks(
         badgeHtml,
         selectors
       );
