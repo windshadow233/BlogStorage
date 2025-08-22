@@ -26,6 +26,16 @@
       }
     }
 
+    function getBadgeKeyQueryParams(badge) {
+      return Array.prototype.slice.call(badge.attributes).filter(function (attr) {
+        return attr.name.lastIndexOf('data-key-', 0) !== -1;
+      }).map(function (attr) {
+        // Most browsers automatically lowercase the attribute name when its being read
+        // We are calling lowercase on it again to ensure consistency for any browsers that are lagging behind.
+        return encodeURIComponent(attr.name.replace('data-', '').toLowerCase()) + '=' + encodeURIComponent(attr.value);
+      });
+    }
+
     /*
     * Renders a single badge on the page
     * @param badge: div element of badge to render
@@ -37,6 +47,8 @@
           theme      = badge.getAttribute('data-theme'),
           vanity     = badge.getAttribute('data-vanity'),
           version    = badge.getAttribute('data-version'),
+          isEI       = badge.hasAttribute('data-ei'),
+          entity     = badge.getAttribute('data-entity'),
           isCreatePage = badge.hasAttribute('data-iscreate'),
           uid        = Math.round(1000000 * Math.random()),
           queryParams = [
@@ -44,19 +56,26 @@
             'badgetype=' + encodeURIComponent(type),
             'badgetheme=' + encodeURIComponent(theme),
             'uid=' + encodeURIComponent(uid),
-            'version=' + encodeURIComponent(version)
+            'version=' + encodeURIComponent(version),
+            'ei=' + encodeURIComponent(isEI? '1': '0')
           ],
           url;
 
-      queryParams.push('maxsize=' + encodeURIComponent(size));
-      queryParams.push('trk=' + encodeURIComponent(TRACKING_PARAM));
-      queryParams.push('vanityname=' + encodeURIComponent(vanity));
+      if (version === 'v2') {
+        queryParams.push('badgesize=' + encodeURIComponent(size));
+        queryParams.push('entity=' + encodeURIComponent(entity));
+        queryParams = queryParams.concat(getBadgeKeyQueryParams(badge));
+      } else {
+        queryParams.push('maxsize=' + encodeURIComponent(size));
+        queryParams.push('trk=' + encodeURIComponent(TRACKING_PARAM));
+        queryParams.push('vanityname=' + encodeURIComponent(vanity));
+      }
 
       if (isCreatePage) {
         queryParams.push('fromCreate=true');
       }
-
-      url = "https://linkedin-profile.fyz666.xyz/api/profile" + '?' + queryParams.join('&');
+      var baseUrl = 'https://linkedin-profile.fyz666.xyz/api/profile';
+      url = baseUrl + '?' + queryParams.join('&');
       badge.setAttribute('data-uid' , uid);
       jsonp(url); //Calls responseHandler when done
     }
