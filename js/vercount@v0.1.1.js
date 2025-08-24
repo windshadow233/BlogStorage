@@ -1,8 +1,6 @@
 var t, e;
 !function() {
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        return;
-    }
+    let local = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
     var n, o = [], a = !1;
     var hostname = 'blog.fyz666.xyz';
     function r() {
@@ -38,17 +36,29 @@ var t, e;
                 s.startsWith("http") || (console.warn("Invalid URL protocol detected. Only HTTP and HTTPS are supported."),
                 i = "https://local.file/invalid-protocol");
                 try {
-                    const a = await fetch(o, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "X-Browser-Token": r
-                        },
-                        body: JSON.stringify({
-                            url: i,
-                            token: r
-                        })
-                    });
+                    let a;
+                    if (local) {
+                        a = await fetch(`${o}?url=${encodeURIComponent(i)}&token=${encodeURIComponent(r)}`, {
+                                method: "GET",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "X-Browser-Token": r
+                                }
+                            });
+                    } else {
+                        a = await fetch(o, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-Browser-Token": r
+                            },
+                            body: JSON.stringify({
+                                url: i,
+                                token: r
+                            })
+                        });
+                    }
+                    
                     if (!a.ok)
                         throw new Error(`API responded with status: ${a.status}`);
                     const s = (t => {
