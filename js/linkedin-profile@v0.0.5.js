@@ -100,10 +100,10 @@
         });
         return div.innerHTML;
     }
-    function modify_style(html, style_dict) {
+    function modifyStyle(html, styleDict) {
         const div = document.createElement('div');
         div.innerHTML = html;
-        for (const [selector, styles] of Object.entries(style_dict)) {
+        for (const [selector, styles] of Object.entries(styleDict)) {
             const elements = div.querySelectorAll(selector);
             elements.forEach(element => {
                 Object.assign(element.style, styles);
@@ -122,11 +122,11 @@
         selectors
       );
         // Modify styles
-      var style_dict = {
+      var styleDict = {
         '.profile-badge': {'margin-left': '0', 'width': '100%', 'height': '100%', 'border-radius': '24px'},
         '.profile-badge__content': {'padding': '5px 20px 20px'}
       }
-      badgeHtml = modify_style(badgeHtml, style_dict);
+      badgeHtml = modifyStyle(badgeHtml, styleDict);
 
       var i, badge, uid, isCreate;
 
