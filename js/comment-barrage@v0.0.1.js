@@ -41,6 +41,7 @@ function commentLinkFilter(data){
     data.sort((a,b)=>{
         return a.created - b.created;
     })
+    if (!commentBarrageConfig.includeReply) return data;
     let newData = [];
     data.forEach(item=>{
         newData.push(...getCommentReplies(item));
